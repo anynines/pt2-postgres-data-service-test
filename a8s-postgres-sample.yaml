@@ -1,0 +1,99 @@
+title: a8s PostgreSQL
+slug: a8s-postgresql
+
+icon: https://anynines.com/assets/bundle/services/a9s-postgresql-de8c9a8900941eaaa6844179172e4a1d411f7ea6863c0f7ec561abae48588e48.png
+
+versions:
+  current: 1.2.3
+  supported:
+    - "13"
+    - "14"
+
+links:
+  - label: Homepage
+    icon: https://anynines.atlassian.net/s/azc3hx/b/7/74c473601271684d0c2cf67698327df9/_/jira-logo-scaled.png
+    url: https://anynines.com
+  - label: Documentation
+    url: https://docs.anynines.com
+  - label: Quick Start
+    url: https://docs.anynines.com/quickstart
+    
+infrastructures:
+  - name: AWS
+    regions:
+      - us-east-1
+      - us-west-2
+      - eu-central-1
+  - name: Azure
+    regions:
+      - eastus
+      - westus
+      - northeurope
+
+tags:
+  - RELATIONAL DATABASE
+  - VM-BASED
+  - SQL
+  - CONSISTENT
+  - HIGHLY AVAILABLE
+  - BACKUP
+  - CONTAINERIZED
+
+categories:
+  - Relational Database
+  - Data Service
+
+content:
+
+  - title: Introduction
+    description: "a8s PostgreSQL automates the entire lifecycle of PostgreSQL instances. From deployment and high availability setup to lifecycle operations such as taking off-site backups and restoring them.\n\nOptimized for operational efficiency through built-in reliability and observability features, it allows IT departments and operators to easily manage and observe PostgreSQL instances in their entire IT landscape. \n\nAt the same time, they fully control the cloud resources they expose to their internal and external customers. \n\nIt allows DevOps to consume PostgreSQL instances conveniently, quickly, and in an automatable way. They also benefit from additional features like high availability, backup, restore monitoring, logging, and more.\n\n<iframe width=\"815\" height=\"458\" src=\"https://www.youtube.com/embed/WHFLN-d6aaU?si=dSTdmLF9JAe_sE7V\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>"
+    tabName: Efficiency Through Automation
+
+  - tabName: Features
+    description: Relational data store, online transactional processing, handling large volumes of geospatial data - a9s PostgreSQL is always the right choice.
+    title: Features
+    cards:
+      - description: Experience the advantage of simplicity with the Extended User Management feature of the a9s PostgreSQL data service. This intuitive tool offers developers the straightforward management of user roles, smoothly blending into regular PostgreSQL procedures. It brings about a significant boost in productivity by making assigning roles more precise and understandable.
+        title: Simplified Role Management
+      - description: Benefit from asynchronous streaming replication and failover handling for PostgreSQL clusters. a9s PostgreSQL ensures your database remains highly available and reliable, even in the face of hardware or software failures.
+        title: Replication and Failover Handling
+      - description: Customize your a9s PostgreSQL database with various plugins and extensions, empowering you to enhance your application’s functionality and performance. Expand your database’s capabilities to suit your unique requirements better.
+        title: Variety of PostgreSQL Plugins and Extensions
+      - description: Keep your data secure with a9s PostgreSQL’s support for TLS-encrypted client communication and encrypted data storage. Safeguard sensitive information and maintain compliance with industry standards and regulations.
+        title: Secure Client Communication and Data Storage
+
+  - tabName: Dependencies
+    description: a8s PostgreSQL requires Kubernetes available in your tenant.
+    title: Dependencies
+    cards:
+      - description: The description of my first dependency
+        icon: https://upload.wikimedia.org/wikipedia/labs/thumb/b/ba/Kubernetes-icon-color.svg/1055px-Kubernetes-icon-color.svg.png
+        title: Kubernetes
+    offerings:
+      - description: "Suspendisse id posuere est. "
+        slug: "data-service-bundle"
+        title: "a9s Data Service Bundle"
+
+items:
+  - item: contentSections
+    values:
+      $yaml: ./a8s-postgres/content.yaml
+
+  - item: configs
+    values:
+      - name: operatorConfig
+        definition:
+          $yaml: https://github.com/anynines/a8s-deployment/blob/develop/deploy/a8s/manifests/postgresql-operator.yaml
+
+  - item: licenses
+    values:
+      - $text: ./LICENSE
+
+  - item: usageExamples
+    values:
+      - name: postgresql-ha-1-instance
+        example:
+          $yaml: https://github.com/anynines/a8s-deployment/blob/develop/examples/postgresql-ha-1-instance.yaml
+      - name: postgresql-ha-2-instance
+        example:
+          $yaml: https://github.com/anynines/a8s-deployment/blob/develop/examples/postgresql-ha-2-instance.yaml

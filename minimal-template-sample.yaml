@@ -1,0 +1,32 @@
+title: a8s PostgreSQL
+icon: https://anynines.com/assets/bundle/services/a9s-postgresql-de8c9a8900941eaaa6844179172e4a1d411f7ea6863c0f7ec561abae48588e48.png
+versions:
+  current: 1.2.3
+
+  supported:
+    - "13"
+    - "14"
+
+items:
+  - item: contentSections
+    values:
+      $yaml: ./a8s-postgres/content.yaml
+
+  - item: configs
+    values:
+      - name: operatorConfig
+        definition:
+          $yaml: https://github.com/anynines/a8s-deployment/blob/develop/deploy/a8s/manifests/postgresql-operator.yaml
+
+  - item: licenses
+    values:
+      - $text: ./LICENSE
+
+  - item: usageExamples
+    values:
+      - name: postgresql-ha-1-instance
+        example:
+          $yaml: https://github.com/anynines/a8s-deployment/blob/develop/examples/postgresql-ha-1-instance.yaml
+      - name: postgresql-ha-2-instance
+        example:
+          $yaml: https://github.com/anynines/a8s-deployment/blob/develop/examples/postgresql-ha-2-instance.yaml
